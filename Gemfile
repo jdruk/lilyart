@@ -30,6 +30,12 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # gem add manualmente
+gem 'mysql2', '~> 0.4.4'
 gem 'jquery-rails'
 gem 'materialize-sass'
 gem 'material_icons'
+gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
+gem 'erubis'
+gem 'pundit'
+gem 'rmagick'
+gem 'carrierwave', '~> 1.0'

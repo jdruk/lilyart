@@ -1,0 +1,62 @@
+<%= form_with(model: item, local: true) do |form| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.number_field :weight, id: :item_weight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :widht %>
+    <%= form.number_field :widht, id: :item_widht %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.number_field :height, id: :item_height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :length %>
+    <%= form.number_field :length, id: :item_length %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descriptio %>
+    <%= form.text_area :descriptio, id: :item_descriptio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :abstract %>
+    <%= form.text_area :abstract, id: :item_abstract %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo %>
+    <%= form.text_field :photo, id: :item_photo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo_gallery %>
+    <%= form.text_field :photo_gallery, id: :item_photo_gallery %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status, id: :item_status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
