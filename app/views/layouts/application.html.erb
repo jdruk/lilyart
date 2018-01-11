@@ -6,9 +6,93 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--Let browser know website is optimized for mobile-->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
   <body>
+    <!-- Inínio cabeçalho -->
+    <nav class="light-blue lighten-1" role="navigation">
+      <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"></a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <% unless user_signed_in? then %>
+              <%= link_to new_user_session_path do %>
+                Entrar<i class=" material-icons right">account_circle</i>
+              <% end %>
+            <% else %>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                Sair<i class=" material-icons right">account_circle</i>
+                <% end %>
+            <% end %>
+          </li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="#">Navbar Link</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+    <!-- Fim cabeçalho -->
+
+    <% unless devise_controller? %>
+      <!-- Inicio Banners -->
+      <div class="carousel carousel-slider center" data-indicators="true">
+        <div class="carousel-fixed-item center">
+          <a class="btn waves-effect white grey-text darken-text-2">button</a>
+        </div>
+        <div class="carousel-item red white-text" href="#one!">
+          <h2>First Panel</h2>
+          <p class="white-text">This is your first panel</p>
+        </div>false
+        <div class="carousel-item amber white-text" href="#two!">
+          <h2>Second Panel</h2>
+          <p class="white-text">This is your second panel</p>
+        </div>
+        <div class="carousel-item green white-text" href="#three!">
+          <h2>Third Panel</h2>
+          <p class="white-text">This is your third panel</p>
+        </div>
+        <div class="carousel-item blue white-text" href="#d!">
+          <h2>Fourth Panel</h2>
+          <p class="white-text">This is your fourth panel</p>
+        </div>
+      </div>
+      <script type="text/javascript">
+        $('.carousel.carousel-slider').carousel({fullWidth: true});
+      </script>
+      <!-- Fim Banners -->
+    <% end %>
+
     <%= yield %>
+    <footer class="page-footer orange">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Ateliê Liliart</h5>
+            <p class="grey-text text-lighten-4"></p>
+
+
+          </div>
+          <div class="col l6 s12 center-align">
+            <h5 class="white-text">Mapa do site</h5>
+            <ul>
+              <li><a class="white-text" href="#!">Link 1</a></li>
+              <li><a class="white-text" href="#!">Link 2</a></li>
+              <li><a class="white-text" href="#!">Link 3</a></li>
+              <li><a class="white-text" href="#!">Link 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          Feito por <a class="orange-text text-lighten-3" href="https://github.com/jdruk">Josafá </a>
+          <a href="https://www.facebook.com/josafa.desenvolvedor" > <%= image_tag('facebook.png', class: 'large material-icons') %> </a>
+          <a href="https://www.instagram.com/desenvolvedorjosafa//" > <%= image_tag('instagram.png', class: 'large material-icons') %></a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

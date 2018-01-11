@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="row">
+        <div class="col m6">
+            <h2>Termos e Condições <i class="material-icons">question_answer</i></h2>
+            <h5>Customização <i class="material-icons">tag_faces</i></h5>
+            <p>Todas as peças são modeladas a mão, totalmente personalizáveis (desde as roupas, às cores de cabelo, pele etc).
+              Por serem peças exclusivas, tamanhos e cores podem sofrer alterações, assim como a modelagem, uma peça nunca é exatamente igual à outra.
+            </p>
+
+            <h5>Atenção <i class="material-icons">warning</i></h5>
+            <p>
+              Produtos à pronta entrega não podem ser personalizados.
+
+              O prazo de confecção dependerá da minha agenda e isso iremos negociar para ter certeza que vou postar na data previamente combinada.
+            </p>
+
+            <h5>Frete <i class="material-icons">place</i></h5>
+            <p>
+              O frete é por conta do comprador. Não me responsabilizo por atrasos por parte dos correios.
+            </p>
+
+            <h5> Pedidos <i class="material-icons">shopping_cart</i></h5>
+            <p>
+              Pedidos não confirmados e pagos em dois dias úteis, serão cancelados podendo  voltar para uma nova negociação, mas não posso garantir a agenda antes confirmada.
+
+              Em caso de residentes em Fortaleza e cidades metropolitanas, poderá ser pelos correios ou  via motoboy, o que for melhor, por conta do comprador ou combinaremos a retirada, se possível.
+            </p>
+
+            <h5>Redes sociais <i class="material-icons">face</i></h5>
+            <p>
+              Não deixe de me visitar nas redes sociais: <br><br>
+
+              <a href="http://www.facebook.com/lili.fortaleza/" > <%= image_tag('facebook.png', class: 'large material-icons') %> </a>
+
+              <a href="https://www.instagram.com/angerlyoliveira/" > <%= image_tag('instagram.png', class: 'large material-icons') %></a>
+            </p>
+        </div>
+        <div class="col m6">
+            <h2 class="center-align">Login</h2>
+            <div class="row">
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name),:html => {:class => "col s12"}) do |f| %>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <%= f.label :email %>
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "validate" %>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <%= f.label :password %>
+                      <%= f.password_field :password, autocomplete: "off", class: "validate" %>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col s12">
+                          <p>
+                            <% if devise_mapping.rememberable? -%>
+                                <%= f.check_box :remember_me %>
+                                <%= f.label :remember_me %>
+                            <% end %>
+                          </p>
+                      </div>
+                  </div>
+
+                  <div class="divider"></div>
+                  <div class="row">
+                      <div class="col m12">
+                          <p class="right-align">
+                            <%= f.submit 'Login',  class: 'btn btn-large waves-effect waves-light' %>
+                          </p>
+                      </div>
+                  </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
