@@ -1,4 +1,4 @@
-class Item < ApplicationRecord
+class Tag < ApplicationRecord
 
   # Relacionamentos
   has_many :item_tags, dependent: :destroy

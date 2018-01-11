@@ -8,30 +8,63 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!--Let browser know website is optimized for mobile-->
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     <style >
+       input[id="search"] {
+         height: 45px !important;
+         margin-top: 0px;
+         border-radius: 5px;
+       }
+       .search-input{
+         background-color: #99d8f5d6 !important ;
+         height: 45px !important;
+         margin-top: 10px;
+         border-radius: 5px;
+       }
+       nav .input-field label {
+           top: -1.5em;
+           left: 0;
+       }
+     </style>
   </head>
 
   <body>
     <!-- Inínio cabeçalho -->
     <nav class="light-blue lighten-1" role="navigation">
-      <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"></a>
-        <ul class="right hide-on-med-and-down">
-          <li>
-            <% unless user_signed_in? then %>
-              <%= link_to new_user_session_path do %>
-                Entrar<i class=" material-icons right">account_circle</i>
-              <% end %>
-            <% else %>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                Sair<i class=" material-icons right">account_circle</i>
-                <% end %>
-            <% end %>
-          </li>
-        </ul>
+      <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo "></a>
+        <!-- Menus esquerdos -->
+        <div class="row">
+          <div class="col s3">
+            <ul class="left hide-on-med-and-down">
+              <li><a href="/">Início</a></li>
+              <li><a href="#">Categorias</a></li>
+            </ul>
+          </div>
+          <div class="col s7">
+            <form class="search-input">
+              <div class="input-field">
+                <input id="search" type="search" />
+                <label for="search"><i class="material-icons">search</i></label>
+              </div>
+            </form>
+          </div>
 
-        <ul id="nav-mobile" class="side-nav">
-          <li><a href="#">Navbar Link</a></li>
-        </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        <!-- Menus direitos -->
+          <div class="col s2">
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <% unless user_signed_in? then %>
+                  <%= link_to new_user_session_path do %>
+                    Entrar<i class=" material-icons right">account_circle</i>
+                  <% end %>
+                <% else %>
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                    Sair<i class=" material-icons right">account_circle</i>
+                    <% end %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
     <!-- Fim cabeçalho -->
@@ -54,7 +87,7 @@
           <h2>Third Panel</h2>
           <p class="white-text">This is your third panel</p>
         </div>
-        <div class="carousel-item blue white-text" href="#d!">
+        <div class="carousel-item blue white-text" href="#four!">
           <h2>Fourth Panel</h2>
           <p class="white-text">This is your fourth panel</p>
         </div>
@@ -64,6 +97,12 @@
       </script>
       <!-- Fim Banners -->
     <% end %>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $(".button-collapse").sideNav();
+        });
+    </script>
 
     <%= yield %>
     <footer class="page-footer orange">
@@ -78,10 +117,9 @@
           <div class="col l6 s12 center-align">
             <h5 class="white-text">Mapa do site</h5>
             <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
+              <% Category.for_map.each do |category| %>
+                <%= link_to category.name, category, class: 'white-text' %>
+              <% end %>
             </ul>
           </div>
         </div>

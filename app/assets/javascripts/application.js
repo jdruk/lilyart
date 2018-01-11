@@ -7,4 +7,4 @@
 //= require materialize-sprockets
 //= require_tree .
 
- $('.carousel.carousel-slider').carousel({fullWidth: true});
+ 
