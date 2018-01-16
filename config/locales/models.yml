@@ -1,0 +1,67 @@
+pt-BR:
+  activerecord:
+    models:
+      address: Endereço
+      category: Categoria
+      item: Produto
+      item_tag: Tags do produto
+      order: Pedido
+      order_item: Produto do pedido
+      sub_category: Sub-categoria
+    attributes:
+      address:
+        zip_code: CEP
+        city: Cidade
+        state: Estado
+        address: Endereço
+        number: Número
+        complement: Complemento
+        user_id: Usuário
+        created_at: Criado em
+        updated_at: Atualizado em
+      category:
+        name: Nome
+        description: Descrição
+        photo_gallery: Fotografia da categoria
+        created_at: Criado em
+        updated_at: Atualizado em
+      item:
+        weight: Comprimento
+        width: Largura
+        height: Altura
+        length: Peso
+        price: Preço
+        descriptio: Descrição
+        abstract: Resumo
+        photo: Foto
+        photo_gallery: Galeria de fotos
+        status: Status
+        created_at: Criado em
+        updated_at: Atualizado em
+      item_tags:
+        item_id: Código produto
+        tag_id: Código Tag
+        created_at: Criado em
+        updated_at: Atualizado em
+      order:
+        status: Status
+        address_id: Endereço de entrega
+        description: Descrição
+        user_id: Cliente
+        order_remarks: Notas do pedido
+        created_at: Criado em
+        updated_at: Atualizado em
+      order_item:
+        order_id: Pedido
+        item_id: Produto
+        price_sale: Preço de venda
+        observation: Observação
+        created_at: Criado em
+        updated_at: Atualizado em
+      sub_category:
+        name: Nome
+        photo_sub_category: Foto sub-categoria
+        description: Descrição
+        category_id: Categoria Pai
+        created_at: Criado em
+        updated_at: Atualizado em

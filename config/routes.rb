@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dashboard_admin/index'
+
   resources :tags
   resources :order_items
   resources :items
