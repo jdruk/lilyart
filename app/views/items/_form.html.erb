@@ -13,6 +13,12 @@
       </div>
     <% end %>
     <div class="row">
+
+      <div class="input-field col s12">
+        <%= form.label :name %>
+        <%= form.text_field :name, id: :item_name %>
+      </div>
+
       <div class="input-field col s3">
         <%= form.label :weight %>
         <%= form.number_field :weight, id: :item_weight, in: 1...101 %>

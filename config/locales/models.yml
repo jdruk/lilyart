@@ -26,6 +26,7 @@ pt-BR:
         created_at: Criado em
         updated_at: Atualizado em
       item:
+        name: Nome
         weight: Comprimento (cm)
         widht: Largura (cm)
         height: Altura (cm)
