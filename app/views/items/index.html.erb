@@ -1,42 +1,33 @@
 
+<h1 class="center-align">Produtos</h1>
 
-<h1>Itens</h1>
+  <ul class="collection">
+    <% @items.each do |product| %>
+      <li class="collection-item avatar">
+        <%= image_tag product.photo.thumb.url, class: 'circle', alt: 'imagem' %>
+        <span class="title"><%= product.name %></span>
+        <p>
+          <%= product.abstract %><br>
+          <%= product.status %>
+        </p>
+        <div class="secondary-content">
 
-<table class="highlight responsive-table">
-  <thead>
-    <tr>
-      <th>Weight</th>
-      <th>Widht</th>
-      <th>Height</th>
-      <th>Length</th>
-      <th>Descriptio</th>
-      <th>Abstract</th>
-      <th>Photo</th>
-      <th>Photo gallery</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+          <%= link_to product  do %>
+            <i class="material-icons">insert_chart</i>
+          <% end %>
 
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= item.weight %></td>
-        <td><%= item.widht %></td>
-        <td><%= item.height %></td>
-        <td><%= item.length %></td>
-        <td><%= item.description %></td>
-        <td><%= item.abstract %></td>
-        <td><%= item.photo %></td>
-        <td><%= item.photo_gallery %></td>
-        <td><%= item.status %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
-      </tr>
+          <%= link_to edit_item_path(product)  do %>
+            <i class="material-icons">mode_edit</i>
+          <% end %>
+
+          <%= link_to product, method: :delete, class: 'red-text', data: {confirm: "Você tem que quer excluir o produto #{product.name}?"}  do %>
+            <i class="material-icons ">warning</i>
+          <% end %>
+
+        </div
+      </li>
     <% end %>
-  </tbody>
-</table>
+  </ul>
 
 <br>
 

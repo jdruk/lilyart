@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
 
+  # Adicionando método do carriewave para upload de imagens
   mount_uploader :photo, PhotoUploader
   mount_uploaders :photo_gallery, PhotoUploader
 
@@ -16,4 +17,13 @@ class Item < ApplicationRecord
   def self.types
     { "Sob encomenda" => 0, "Pronta entrega" => 1 }
   end
+
+  # Validações
+  validates :name, :weight, :widht, :height, :length, :status,  presence: true
+  validates :weight, numericality: { only_integer: true }
+  validates :widht, numericality: { only_integer: true }
+  validates :height, numericality: { only_integer: true }
+  validates :length, numericality: { only_integer: true }
+  validates :abstract, length: { maximum: 120, too_long: "%{count} Máximo de caracteres permitidos" }
+
 end

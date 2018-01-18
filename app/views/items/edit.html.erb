@@ -1,6 +1,6 @@
-<h1>Editing Item</h1>
+<h1 class="center-align">Editar produto</h1>
 
 <%= render 'form', item: @item %>
 
-<%= link_to 'Show', @item %> |
-<%= link_to 'Back', items_path %>
+<%= link_to 'Mostrar', @item, class: 'btn' %>
+<%= link_to 'Voltar', items_path, class: 'btn' %>
