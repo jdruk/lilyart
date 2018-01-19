@@ -7,8 +7,10 @@
 	Rmagick
 	libmysqlclient	
 
-	** Install Arch Linux
+	*Install Arch Linux
+	
 		> $ pacaur libmysqlclient 
+		
 		> $ sudo pacman -Sy imagemagick 
 
 * Configuration
