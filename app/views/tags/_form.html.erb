@@ -1,27 +1,35 @@
-<%= form_with(model: tag, local: true) do |form| %>
-  <% if tag.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(tag.errors.count, "error") %> prohibited this tag from being saved:</h2>
+<div class="row col s7 offset-s2">
+  <%= form_with(model: tag, local: true) do |form| %>
+    <% if tag.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(tag.errors.count, "error") %> prohibited this tag from being saved:</h2>
 
-      <ul>
-      <% tag.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% tag.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="input-field">
+      <%= form.text_field :name, id: :tag_name %>
+      <%= form.label :name %>
+    </div>
+
+    <div class="file-field input-field col s12">
+      <div class="btn">
+        <span>Galeria de fotos</span>
+        <%= form.file_field :photo, id: :tag_photo%>
+        <%= form.hidden_field :photo_cache %>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Upload de um ou mais arquivos">
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class: 'btn' %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :tag_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :photo %>
-    <%= form.text_field :photo, id: :tag_photo %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

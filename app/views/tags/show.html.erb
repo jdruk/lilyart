@@ -1,14 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tag.name %>
-</p>
+<div class="container row">
+  <p>
+    <strong>Nome:</strong>
+    <%= @tag.name %>
+  </p>
 
-<p>
-  <strong>Photo:</strong>
-  <%= @tag.photo %>
-</p>
+  <p>
+    <strong>Foto:</strong>
+    <%= image_tag(@tag.photo.url, class: 'materialboxed', width:"250px") if @tag.photo? %>
+  </p>
 
-<%= link_to 'Edit', edit_tag_path(@tag) %> |
-<%= link_to 'Back', tags_path %>
+  <%= link_to 'Editar', edit_tag_path(@tag), class: 'btn' %>
+  <%= link_to 'Voltar', tags_path, class: 'btn' %>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+</script>
