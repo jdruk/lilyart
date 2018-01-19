@@ -52,6 +52,17 @@
         <%= form.select :type_item, Item.types.each { |key, value|},id: :item_type_item %>
         <%= form.label :type_item %>
       </div>
+
+      <div class="input-field col s6">
+        <%= form.collection_select(:tag_ids, Tag.all, :id, :name, {:include_bank => false}, {:multiple => true}) %>
+        <%= form.label :tag_ids %>
+      </div>
+
+      <div class="input-field col s6">
+        <%= form.collection_select(:sub_category_ids, SubCategory.all, :id, :name, {:include_bank => false}, {:multiple => true}) %>
+        <%= form.label :sub_category_ids %>
+      </div>
+
     </div>
 
     <div class="row">

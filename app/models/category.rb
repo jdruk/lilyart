@@ -6,7 +6,7 @@ class Category < ApplicationRecord
   mount_uploader :photo_category, PhotoUploader
 
   # maps de categorias para footer do site
-  def self.for_map
+  def self.for_map_site
     Category.all
   end
 

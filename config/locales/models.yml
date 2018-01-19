@@ -38,6 +38,8 @@ pt-BR:
         photo_gallery: Galeria de fotos
         status: Status
         type_item: Tipo de produto
+        tag_ids: Tags
+        sub_category_ids: SubCategorias
         created_at: Criado em
         updated_at: Atualizado em
       item_tags:

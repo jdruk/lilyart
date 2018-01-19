@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180117003420) do
+ActiveRecord::Schema.define(version: 20180119225947) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "zip_code", null: false
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20180117003420) do
     t.string "photo_category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "item_sub_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "item_id"
+    t.bigint "sub_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_item_sub_categories_on_item_id"
+    t.index ["sub_category_id"], name: "index_item_sub_categories_on_sub_category_id"
   end
 
   create_table "item_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -119,6 +128,8 @@ ActiveRecord::Schema.define(version: 20180117003420) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "item_sub_categories", "items"
+  add_foreign_key "item_sub_categories", "sub_categories"
   add_foreign_key "item_tags", "items"
   add_foreign_key "item_tags", "tags"
   add_foreign_key "order_items", "items"

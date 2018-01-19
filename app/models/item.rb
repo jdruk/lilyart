@@ -7,6 +7,8 @@ class Item < ApplicationRecord
   # Relacionamentos
   has_many :item_tags, dependent: :destroy
   has_many :tags, :through => :item_tags
+  has_many :item_sub_categories, dependent: :destroy
+  has_many :sub_categories, :through => :item_sub_categories
 
   # Opção de visibilidade do produto
   def self.visibility_status

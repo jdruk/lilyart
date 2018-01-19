@@ -1,4 +1,5 @@
 <div class="container row">
+  <h1 class="center-align">Detalhes</h1>
 
   <p class="flow-text">
     <strong>Comprimento:</strong>
@@ -22,6 +23,26 @@
   <p class="flow-text">
     <strong>Resumo:</strong>
     <%= @item.abstract %>
+  </p>
+
+  <p class="flow-text">
+    <strong>Subcategorias:</strong>
+    <% @item.sub_categories.each do |sub_category| %>
+      <div class="chip">
+        <%= image_tag sub_category.photo_sub_category.thumb.url if sub_category.photo_sub_category? %>
+        <%= sub_category.name %>
+      </div>
+    <% end %>
+  </p>
+
+  <p class="flow-text">
+    <strong>Tags:</strong>
+    <% @item.tags.each do |tag| %>
+      <div class="chip">
+        <%= image_tag tag.photo.thumb.url if tag.photo? %>
+        <%= tag.name %>
+      </div>
+    <% end %>
   </p>
 
   <p>
