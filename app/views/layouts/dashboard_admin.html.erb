@@ -1,192 +1,180 @@
-<head>
-  <!-- link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" -->
-  <title>Liliart</title>
-  <%= csrf_meta_tags %>
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <!--Let browser know website is optimized for mobile-->
-   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-   <style media="screen">
-      header,
-      main,
-      footer {
-        padding-left: 240px;
-      }
-
-      body {
-        backgroud: white;
-      }
-
-      @media only screen and (max-width: 992px) {
-      header,
-      main,
-      footer {
-          padding-left: 0;
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="John Doe">
+    <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
+    <meta name="Description" CONTENT="Author: A.N. Author, Illustrator: P. Picture, Category: Books, Price:  £9.24, Length: 784 pages">
+    <!-- Verificar quando subir o site novo -->
+    <!-- https://www.google.com/webmasters/verification/verification?hl=en&siteUrl=http://atelielily.com.br/&continue=https://www.google.com/webmasters/tools/dashboard?hl%3Den%26authuser%3D0%26siteUrl%3Dhttp://atelielily.com.br/%26sig%3DALjLGbPcBT_wrbWEWtPd0s82dfzbs-cn_g&theme=wmt&authuser=0&priorities=vfile,vmeta,vdns,vanalytics,vtagmanager&tid=alternate -->
+    <meta name="google-site-verification" content="vnruSKz8NU21jytNNXJ5hHwM1mPtES4zIQvzRHf5M4c" />
+    <meta name="google" content="notranslate" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="atelielily" />
+    <meta property="og:url" content="http://atelielily.com.br/" />
+    <!-- link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" -->
+    <title>Liliart</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--Let browser know website is optimized for mobile-->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     <style media="screen">
+        header,
+        main,
+        footer {
+          padding-left: 240px;
         }
-      }
+        body {
+          backgroud: white;
+        }
+        @media only screen and (max-width: 992px) {
+        header,
+        main,
+        footer {
+            padding-left: 0;
+          }
+        }
+        #credits li,
+        #credits li a {
+          color: white;
+        }
+        #credits li a {
+          font-weight: bold;
+        }
+        .footer-copyright .container,
+        .footer-copyright .container a {
+          color: #BCC2E2;
+        }
+        .fab-tip {
+          position: fixed;
+          right: 85px;
+          padding: 0px 0.5rem;
+          text-align: right;
+          background-color: #323232;
+          border-radius: 2px;
+          color: #FFF;
+          width: auto;
+        }
 
-      #credits li,
-      #credits li a {
-        color: white;
-      }
+     </style>
+  </head>
+  <body>
+    <ul id="slide-out" class="side-nav fixed z-depth-2">
+      <li class="center no-padding">
+        <div class="indigo darken-2 white-text" style="height: 180px;">
+          <div class="row">
+            <div class="col offset-s2 s8 center-align">
+              <%= image_tag("admin_female.png", class: 'tiny circle responsive-img') %>
+            </div>
+          </div>
+        </div>
+      </li>
 
-      #credits li a {
-        font-weight: bold;
-      }
+      <li id="dash_dashboard">
+        <%= link_to "Administrador", dashboard_admin_index_path, class: 'waves-effect', style: 'text-decoration: none;' %>
+      </li>
+      <ul class="collapsible" data-collapsible="accordion">
+        <li id="dash_users">
+          <div id="dash_users_header" class="collapsible-header waves-effect"><b>Usuários</b></div>
+          <div id="dash_users_body" class="collapsible-body">
+            <ul>
+              <li id="users_seller">
+                <a class="waves-effect" style="text-decoration: none;" href="#!">Mensagens</a>
+              </li>
 
-      .footer-copyright .container,
-      .footer-copyright .container a {
-        color: #BCC2E2;
-      }
+              <li id="users_customer">
+                <a class="waves-effect" style="text-decoration: none;" href="#!">Clientes</a>
+              </li>
+            </ul>
+          </div>
+        </li>
 
-      .fab-tip {
-        position: fixed;
-        right: 85px;
-        padding: 0px 0.5rem;
-        text-align: right;
-        background-color: #323232;
-        border-radius: 2px;
-        color: #FFF;
-        width: auto;
-      }
+        <li id="dash_products">
+          <div id="dash_products_header" class="collapsible-header waves-effect"><b>Produtos</b></div>
+          <div id="dash_products_body" class="collapsible-body">
+            <ul>
+              <li id="products_product">
+                <%= link_to "Produtos", items_path, class: 'waves-effect', style: 'text-decoration: none;' %>
+                <a class="waves-effect" style="text-decoration: none;" href="#!">Pedidos</a>
+              </li>
+            </ul>
+          </div>
+        </li>
 
-   </style>
-</head>
+        <li id="dash_categories">
+          <div id="dash_categories_header" class="collapsible-header waves-effect"><b>Categorias</b></div>
+          <div id="dash_categories_body" class="collapsible-body">
+            <ul>
+              <li id="categories_category">
+                <%= link_to "Categorias", categories_path, class: 'waves-effect', style: 'text-decoration: none;' %>
+                <%= link_to "Tags", tags_path, class: 'waves-effect', style: 'text-decoration: none;' %>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </ul>
 
-<body>
+    <div style="width:96%;" class="right">
+      <header>
+        <ul class="dropdown-content" id="user_dropdown">
+          <li><a class="indigo-text" href="#!">Perfil</a></li>
+          <li><a class="indigo-text" href="#!">Sair</a></li>
+        </ul>
 
-  <ul id="slide-out" class="side-nav fixed z-depth-2">
-    <li class="center no-padding">
-      <div class="indigo darken-2 white-text" style="height: 180px;">
+        <nav class="indigo" role="navigation">
+          <div class="nav-wrapper">
+            <a data-activates="slide-out" class="button-collapse show-on-" href="#!"><img style="margin-top: 17px; margin-left: 5px;" src="https://res.cloudinary.com/dacg0wegv/image/upload/t_media_lib_thumb/v1463989873/smaller-main-logo_3_bm40iv.gif" /></a>
+
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <a class='right dropdown-button' href='' data-activates='user_dropdown'><i class=' material-icons'>account_circle</i></a>
+              </li>
+            </ul>
+
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+          </div>
+        </nav>
+
+        <nav>
+          <div class="nav-wrapper indigo darken-2">
+            <a style="margin-left: 20px;" class="breadcrumb" href="#!">Admin</a>
+            <a class="breadcrumb" href="#!">Index</a>
+
+            <div style="margin-right: 20px;" id="timestamp" class="right"></div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Conteúdo principal -->
+      <main>
+        <div class="row white">
+          <%= yield %>
+        </div>
+      </main>
+      <!-- Fim conteúdo principal -->
+
+    </div>
+    <footer class="indigo page-footer">
+      <div class="container">
         <div class="row">
-          <div class="col offset-s2 s8 center-align">
-            <%= image_tag("admin_female.png", class: 'tiny circle responsive-img') %>
+          <div class="col s12">
+            <h5 class="white-text">SysVen 1.0</h5>
+            <ul id='credits'>
+              <li>
+                Código do projeto <a href="https://github.com/jdruk/lilyart" title="Form Type Maker">Github</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </li>
-
-    <li id="dash_dashboard"><a class="waves-effect" href="#!"><b>Administrador</b></a></li>
-    <ul class="collapsible" data-collapsible="accordion">
-      <li id="dash_users">
-        <div id="dash_users_header" class="collapsible-header waves-effect"><b>User</b></div>
-        <div id="dash_users_body" class="collapsible-body">
-          <ul>
-            <li id="users_seller">
-              <a class="waves-effect" style="text-decoration: none;" href="#!">Seller</a>
-            </li>
-
-            <li id="users_customer">
-              <a class="waves-effect" style="text-decoration: none;" href="#!">Customer</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-
-      <li id="dash_products">
-        <div id="dash_products_header" class="collapsible-header waves-effect"><b>Products</b></div>
-        <div id="dash_products_body" class="collapsible-body">
-          <ul>
-            <li id="products_product">
-              <a class="waves-effect" style="text-decoration: none;" href="#!">Products</a>
-              <a class="waves-effect" style="text-decoration: none;" href="#!">Orders</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-
-      <li id="dash_categories">
-        <div id="dash_categories_header" class="collapsible-header waves-effect"><b>Categories</b></div>
-        <div id="dash_categories_body" class="collapsible-body">
-          <ul>
-            <li id="categories_category">
-              <a class="waves-effect" style="text-decoration: none;" href="#!">Category</a>
-            </li>
-
-            <li id="categories_sub_category">
-              <a class="waves-effect" style="text-decoration: none;" href="#!">Sub Category</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-
-      <li id="dash_brands">
-        <div id="dash_brands_header" class="collapsible-header waves-effect"><b>Brands</b></div>
-        <div id="dash_brands_body" class="collapsible-body">
-          <ul>
-            <li id="brands_brand">
-              <a class="waves-effect" style="text-decoration: none;" href="#!">Brand</a>
-            </li>
-
-            <li id="brands_sub_brand">
-              <a class="waves-effect" style="text-decoration: none;" href="#!">Sub Brand</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </ul>
-
-  <div style="width:96%;" class="right">
-    <header>
-      <ul class="dropdown-content" id="user_dropdown">
-        <li><a class="indigo-text" href="#!">Perfil</a></li>
-        <li><a class="indigo-text" href="#!">Sair</a></li>
-      </ul>
-
-      <nav class="indigo" role="navigation">
-        <div class="nav-wrapper">
-          <a data-activates="slide-out" class="button-collapse show-on-" href="#!"><img style="margin-top: 17px; margin-left: 5px;" src="https://res.cloudinary.com/dacg0wegv/image/upload/t_media_lib_thumb/v1463989873/smaller-main-logo_3_bm40iv.gif" /></a>
-
-          <ul class="right hide-on-med-and-down">
-            <li>
-              <a class='right dropdown-button' href='' data-activates='user_dropdown'><i class=' material-icons'>account_circle</i></a>
-            </li>
-          </ul>
-
-          <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-        </div>
-      </nav>
-
-      <nav>
-        <div class="nav-wrapper indigo darken-2">
-          <a style="margin-left: 20px;" class="breadcrumb" href="#!">Admin</a>
-          <a class="breadcrumb" href="#!">Index</a>
-
-          <div style="margin-right: 20px;" id="timestamp" class="right"></div>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Conteúdo principal -->
-    <main>
-      <div class="row white">
-        <%= yield %>
-      </div>
-    </main>
-    <!-- Fim conteúdo principal -->
-
-  </div>
-  <footer class="indigo page-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col s12">
-          <h5 class="white-text">SysVen 1.0</h5>
-          <ul id='credits'>
-            <li>
-              Código do projeto <a href="https://github.com/jdruk/lilyart" title="Form Type Maker">Github</a>
-            </li>
-          </ul>
+      <div class="footer-copyright">
+        <div class="container">
+           <span>Desenvolvido por <a style='font-weight: bold;' href="https://github.com/jdruk" target="_blank"> Josafá Martins</a></span>
         </div>
       </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-         <span>Desenvolvido por <a style='font-weight: bold;' href="https://github.com/jdruk" target="_blank"> Josafá Martins</a></span>
-      </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 
 </html>

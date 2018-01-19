@@ -4,6 +4,7 @@ class PhotoGalleryController < ApplicationController
   def create
     add_more_images(images_params[:photo_gallery])
     flash[:error] = "Falha ao carregar imagem" unless @item.save
+    session[:show_modal]=true
     redirect_back(fallback_location: root_path)
   end
 
@@ -11,7 +12,8 @@ class PhotoGalleryController < ApplicationController
     remove_image_at_index(params[:id].to_i)
     flash[:error] = "Falha ao deletar imagem" unless @item.save
     @item.reload
-    redirect_back(fallback_location: root_path)
+    session[:show_modal]=true
+    redirect_back fallback_location: proc { edit_item_path(@item, show: true) }
   end
 
   private

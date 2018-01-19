@@ -148,5 +148,9 @@
   $(document).ready(function() {
     $('select').material_select();
     $('.modal').modal();
+    <% if session[:show_modal] %>
+        <% session[:show_modal] = nil %>
+        $('#modal1').modal('open');
+    <% end %>
   });
 </script>
