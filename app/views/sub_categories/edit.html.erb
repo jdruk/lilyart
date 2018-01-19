@@ -1,6 +1,6 @@
-<h1>Editing Sub Category</h1>
+<h1  class="center-align">Editing Sub Category</h1>
 
 <%= render 'form', sub_category: @sub_category %>
 
-<%= link_to 'Show', @sub_category %> |
-<%= link_to 'Back', sub_categories_path %>
+<%= link_to 'Mostrar', [@category, @sub_category], class: 'btn' %>
+<%= link_to 'Voltar', category_sub_categories_path, class: 'btn' %>

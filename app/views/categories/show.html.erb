@@ -1,19 +1,23 @@
 <p id="notice"><%= notice %></p>
+<div class="container row">
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @category.name %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @category.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @category.description %>
+  </p>
+    <div class="divider">
+    </div>
+  <p>
+    <%= image_tag @category.photo_category.url %>
+  </p>
 
-<p>
-  <strong>Photo category:</strong>
-  <%= @category.photo_category %>
-</p>
+  <%= link_to 'Editar', edit_category_path(@category), class: 'btn' %>
+  <%= link_to 'Voltar', categories_path, class:'btn' %>
+  <%= link_to 'Subcategorias', category_sub_categories_path(@category), class:'btn' %>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+</div>

@@ -1,32 +1,44 @@
-<%= form_with(model: category, local: true) do |form| %>
-  <% if category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+<div class="col s7 offset-s2">
+  <%= form_with(model: category, local: true) do |form| %>
+    <% if category.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
 
-      <ul>
-      <% category.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% category.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="input-field">
+      <%= form.text_field :name, id: :category_name %>
+      <%= form.label :name %>
+    </div>
+
+    <div class="input-field">
+      <%= form.text_field :description, id: :category_description %>
+      <%= form.label :description %>
+    </div>
+
+    <div class="file-field input-field col s12">
+      <div class="btn">
+        <span>Foto da categoria</span>
+        <%= form.file_field :photo_category, id: :category_photo_category %>
+        <%= form.hidden_field :photo_category_cache %>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" >
+      </div>
+    </div>
+
+    <div class="">
+       <%= image_tag(@category.photo_category_url) if @category.photo_category? %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class:'btn' %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :category_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :category_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :photo_category %>
-    <%= form.text_field :photo_category, id: :category_photo_category %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

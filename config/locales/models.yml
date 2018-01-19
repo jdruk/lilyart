@@ -22,7 +22,7 @@ pt-BR:
       category:
         name: Nome
         description: Descrição
-        photo_gallery: Fotografia da categoria
+        photo_category: Fotografia da categoria
         created_at: Criado em
         updated_at: Atualizado em
       item:

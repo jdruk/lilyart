@@ -1,24 +1,27 @@
 <p id="notice"><%= notice %></p>
+<div class="container row">
+  <p>
+    <strong>Nome:</strong>
+    <%= @sub_category.name %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @sub_category.name %>
-</p>
+  <p>
+    <strong>Descrição:</strong>
+    <%= @sub_category.description %>
+  </p>
+  <div class="diviver"> </div>
+  <p>
+    <div>
+       <%= image_tag(@sub_category.photo_sub_category_url, style: 'max-height:500px;', class: 'materialboxed') if @sub_category.photo_sub_category? %>
+    </div>
+  </p>
 
-<p>
-  <strong>Photo sub category:</strong>
-  <%= @sub_category.photo_sub_category %>
-</p>
+  <%= link_to 'Editar', edit_category_sub_category_path([@category,@sub_category]), class: 'btn' %>
+  <%= link_to 'Voltar', category_sub_categories_path, class: 'btn' %>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @sub_category.description %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @sub_category.category %>
-</p>
-
-<%= link_to 'Edit', edit_sub_category_path(@sub_category) %> |
-<%= link_to 'Back', sub_categories_path %>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+</script>

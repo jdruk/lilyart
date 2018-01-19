@@ -1,62 +1,55 @@
-<div class="">
+<div class="container row">
+
+  <p class="flow-text">
+    <strong>Comprimento:</strong>
+    <%= @item.weight %>
+
+    <strong>Largura:</strong>
+    <%= @item.widht %>
+
+    <strong>Altura:</strong>
+    <%= @item.height %>
+
+    <strong>Peso:</strong>
+    <%= @item.length %>
+  </p>
+
+  <p class="flow-text">
+    <strong>Descrição do produto:</strong>
+    <%= @item.description %>
+  </p>
+
+  <p class="flow-text">
+    <strong>Resumo:</strong>
+    <%= @item.abstract %>
+  </p>
+
+  <p>
+    <strong>Foto principal:</strong>
+    <%= image_tag(@item.photo.url, class: 'materialboxed', width:"250px") %>
+  </p>
+
+    <div class="divider"></div>
+    <div class="row">
+      <h3 class="center-align">Galeria de fotos:</h3>
+      <% @item.photo_gallery.each do  |image| %>
+        <div class="col s4">
+          <%= image_tag(image.url, class: 'materialboxed', width:"250px") %>
+        </div>
+      <% end %>
+    </div>
+
+
+
+  <p>
+    <strong>Status:</strong>
+    <%= @item.status %>
+  </p>
+
+  <%= link_to 'Editar', edit_item_path(@item), class: 'btn' %>
+  <%= link_to 'Voltar', items_path, class: 'btn' %>
 
 </div>
-
-<p>
-  <strong>Comprimento:</strong>
-  <%= @item.weight %>
-</p>
-
-<p>
-  <strong>Largura:</strong>
-  <%= @item.widht %>
-</p>
-
-<p>
-  <strong>Altura:</strong>
-  <%= @item.height %>
-</p>
-
-<p>
-  <strong>Peso:</strong>
-  <%= @item.length %>
-</p>
-
-<p class="flow-text">
-  <strong>Descrição do produto:</strong>
-  <%= @item.description %>
-</p>
-
-<p class="flow-text">
-  <strong>Resumo:</strong>
-  <%= @item.abstract %>
-</p>
-
-<p>
-  <strong>Foto principal:</strong>
-  <%= image_tag(@item.photo.url, class: 'materialboxed', width:"250px") %>
-</p>
-
-  <div class="divider"></div>
-  <div class="row">
-    <h3 class="center-align">Galeria de fotos:</h3>
-    <% @item.photo_gallery.each do  |image| %>
-      <div class="col s4">
-        <%= image_tag(image.url, class: 'materialboxed', width:"250px") %>
-      </div>
-    <% end %>
-  </div>
-
-
-
-<p>
-  <strong>Status:</strong>
-  <%= @item.status %>
-</p>
-
-<%= link_to 'Editar', edit_item_path(@item), class: 'btn' %>
-<%= link_to 'Voltar', items_path, class: 'btn' %>
-
 <script type="text/javascript">
   $(document).ready(function(){
     $('.materialboxed').materialbox();
