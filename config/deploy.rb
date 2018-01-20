@@ -40,3 +40,4 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bund
 # set :ssh_options, verify_host_key: :secure
 set :console_env, :production
 set :console_user, :deploy
+set :passenger_restart_with_sudo, true
