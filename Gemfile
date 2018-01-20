@@ -25,12 +25,12 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'mysql2', '~> 0.4.4'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # gem add manualmente
-gem 'mysql2', '~> 0.4.4'
 gem 'jquery-rails'
 gem 'materialize-sass'
 gem 'material_icons'
@@ -39,6 +39,7 @@ gem 'erubis'
 gem 'pundit'
 gem 'rmagick'
 gem 'carrierwave', '~> 1.0'
+gem 'pg', '~> 0.21.0'
 # Capistrano
 gem 'capistrano', '~> 3.7', '>= 3.7.1'
 gem 'capistrano-rails', '~> 1.2'
