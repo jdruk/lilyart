@@ -6,6 +6,7 @@ set :repo_url, "https://github.com/jdruk/lilyart.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :branch, 'v1'
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/deploy/liliart'
