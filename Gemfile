@@ -39,9 +39,11 @@ gem 'erubis'
 gem 'pundit'
 gem 'rmagick'
 gem 'carrierwave', '~> 1.0'
+
 group :production do
   gem 'pg', '~> 0.21.0'
 end
+
 # Capistrano
 gem 'capistrano', '~> 3.7', '>= 3.7.1'
 gem 'capistrano-rails', '~> 1.2'

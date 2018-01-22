@@ -3,6 +3,7 @@ lock "~> 3.10.1"
 
 set :application, "liliart"
 set :repo_url, "https://github.com/jdruk/lilyart"
+set :branch, 'v1'
 
 set :deploy_to, "/home/deploy/liliart"
 

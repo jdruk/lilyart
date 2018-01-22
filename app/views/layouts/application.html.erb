@@ -17,11 +17,37 @@
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="atelielily.com.br" />
 
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Angerly",
+      "url": "http://www.atelielily.com.br",
+      "sameAs": [
+        "http://facebook.com/liliartfortaleza",
+        "http://instagram.com/atelielily"
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "http://www.atelielily.com.br",
+      "logo": "http://www.atelielily.com.br/liliart.png",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+1-401-555-1212",
+        "contactType": "sales"
+      }]
+    }
+  </script>
     <title>atelielily.com.br - A melhor loja de biscuit do Brasil com os melhores preços</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -46,6 +72,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    </head>
    <body>
+
     <!-- Inínio cabeçalho -->
     <nav class="light-blue lighten-1" role="navigation" style="min-height:400px;">
       <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo "></a>
