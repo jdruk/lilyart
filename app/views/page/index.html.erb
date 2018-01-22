@@ -1,53 +1,29 @@
-<!--
-<div class="section no-pad-bot" id="index-banner">
-  <div class="container">
-    <br><br>
-    <h2 class="header center orange-text">OneBitCode</h2>
-    <div class="row center">
-      <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-    </div>
-    <div class="row center">
-      <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-    </div>
-    <br><br>
-
-  </div>
-</div>
--->
 
 <div class="container">
   <div class="section">
-
-    <!--   Icon Section   -->
     <div class="row">
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-          <h5 class="center">Speeds up development</h5>
-
-          <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+      <% @items.each do |item| %>
+        <div  itemscope itemtype="http://schema.org/Product" class="col s3">
+          <div class="card">
+            <div itemprop="image" class="card-image">
+              <%= image_tag item.photo.url %>
+              <span class="card-title" itemprop="name" ><%= item.name %></span>
+            </div>
+            <div class="card-content">
+              <p  itemprop="description"><%= item.abstract %></p>
+            </div>
+            <div class="card-action">
+              <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                <span itemprop="priceCurrency" content="BRL"></span>
+                  <span
+                      itemprop="price" content="<%= item.price %>"><%= item.price %>
+                  </span>
+                <span itemprop="availability" href="http://schema.org/InStock" />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-          <h5 class="center">User Experience Focused</h5>
-
-          <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-        </div>
-      </div>
-
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-          <h5 class="center">Easy to work with</h5>
-
-          <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-        </div>
-      </div>
+      <% end %>
     </div>
-
   </div>
-  <br><br>
 </div>

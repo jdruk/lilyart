@@ -20,8 +20,12 @@ class Item < ApplicationRecord
     { "Sob encomenda" => 0, "Pronta entrega" => 1 }
   end
 
+  def price_without_promotion
+    self.price * 1.25
+  end
+
   # Validações
-  validates :name, :weight, :widht, :height, :length, :status,  presence: true
+  validates :name, :weight, :widht, :height, :length, :status, presence: true
   validates :weight, numericality: { only_integer: true }
   validates :widht, numericality: { only_integer: true }
   validates :height, numericality: { only_integer: true }

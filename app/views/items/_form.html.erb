@@ -18,9 +18,15 @@
     <% end %>
 
     <div class="row">
-      <div class="input-field col s12">
+      <div class="input-field col s6">
         <%= form.label :name %>
         <%= form.text_field :name, id: :item_name %>
+      </div>
+
+      <div class="input-field col s6">
+        <%= form.label :price %>
+        <!-- f.number_field :amount, value: number_to_currency(f.object.amount.to_f, delimiter: '', unit: ''), step: :any -->
+        <%= form.number_field :price,value: number_to_currency(form.object.price.to_f) , id: :item_price %>
       </div>
 
       <div class="input-field col s3">
@@ -43,14 +49,21 @@
         <%= form.number_field :length, id: :item_length, in: 1...101 %>
       </div>
 
-      <div class="input-field col s6">
+      <div class="input-field col s4">
         <%= form.select :status, Item.visibility_status.each { |key, value|}, id: :item_status  %>
         <%= form.label :status %>
       </div>
 
-      <div class="input-field col s6">
+      <div class="input-field col s4">
         <%= form.select :type_item, Item.types.each { |key, value|},id: :item_type_item %>
         <%= form.label :type_item %>
+      </div>
+
+      <div class=" col s4">
+        <p>
+          <%= form.check_box :featured_product, id: :item_featured_product, class:"filled-in" %>
+          <%= form.label :featured_product %>
+        </p>
       </div>
 
       <div class="input-field col s6">

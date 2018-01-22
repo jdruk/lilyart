@@ -40,6 +40,7 @@ pt-BR:
         type_item: Tipo de produto
         tag_ids: Tags
         sub_category_ids: SubCategorias
+        featured_product: Em destaque
         created_at: Criado em
         updated_at: Atualizado em
       item_tags:
