@@ -67,7 +67,19 @@
            top: -1.5em;
            left: 0;
        }
+
+
      </style>
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113084880-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-113084880-1');
+    </script>
+
      <!-- google Icon -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    </head>
@@ -159,16 +171,18 @@
     <footer class="page-footer orange">
       <div class="container">
         <div class="row">
-          <div class="col l6 s12">
+          <div class="col l4 s12">
             <h5 class="white-text">Ateliê Liliart</h5>
             <p class="grey-text text-lighten-4"></p>
           </div>
-          <div class="col l6 s12 center-align">
+          <div class="col l3 s12 offset-l3 ">
             <h5 class="white-text">Mapa do site</h5>
             <ul>
-              <% Category.for_map_site.each do |category| %>
-                <%= link_to category.name, category, class: 'white-text' %>
-              <% end %>
+              <li>
+                <% Category.for_map_site.each do |category| %>
+                  <%= link_to category.name, category, class: 'white-text' %><br>
+                <% end %>
+              </li>
             </ul>
           </div>
         </div>
@@ -177,7 +191,7 @@
         <div class="container">
           Feito por <a class="orange-text text-lighten-3" href="https://github.com/jdruk">Josafá </a>
           <a href="https://www.facebook.com/josafa.desenvolvedor" > <%= image_tag('facebook.png', class: 'large material-icons') %> </a>
-          <a href="https://www.instagram.com/desenvolvedorjosafa//" > <%= image_tag('instagram.png', class: 'large material-icons') %></a>
+          <a href="https://www.instagram.com/desenvolvedorjosafa" > <%= image_tag('instagram.png', class: 'large material-icons') %></a>
         </div>
       </div>
     </footer>
