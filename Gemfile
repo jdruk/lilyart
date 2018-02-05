@@ -34,7 +34,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 gem 'materialize-sass'
 gem 'material_icons'
-gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
+gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 gem 'erubis'
 gem 'pundit'
 gem 'rmagick'
