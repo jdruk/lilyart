@@ -1,6 +1,11 @@
-entrypoint: bundle exec rackup --port $PORT
-env: flex
+env: production
 runtime: ruby
+entrypoint: bundle exec rackup --port $PORT
+
 
 env_variables:
   SECRET_KEY_BASE: 5c093afc412617adcb09aa1fb90f59ef839141bba87c82efb3c43e96123f9098a4eca60cb5fb0e8a7df9ff56ab207d159ece9b220e7eec8e447ca21120b9c95e
+  RAILS_ENV: production
+
+beta_settings:
+  cloud_sql_instances: atelielily-194313:southamerica-east1:liliart
