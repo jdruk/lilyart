@@ -1,4 +1,4 @@
-env: production
+env: flex
 runtime: ruby
 entrypoint: bundle exec rackup --port $PORT
 
