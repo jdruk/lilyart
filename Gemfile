@@ -50,3 +50,6 @@ end
 #gem 'capistrano-passenger', '~> 0.2.0'
 #gem 'capistrano-rvm'
 gem "appengine", "~> 0.4.1"
+gem "fog-google"
+gem "google-api-client", "> 0.8.5", "< 0.9"
+gem "mime-types"
