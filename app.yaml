@@ -9,3 +9,8 @@ env_variables:
 
 beta_settings:
   cloud_sql_instances: atelielily-194313:southamerica-east1:liliart
+
+handlers:
+- url: /.*
+  script: IGNORED
+  secure: always
