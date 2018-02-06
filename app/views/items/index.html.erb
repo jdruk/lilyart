@@ -4,7 +4,9 @@
   <ul class="collection">
     <% @items.each do |product| %>
       <li class="collection-item avatar">
-        <%= image_tag product.photo.thumb.url, class: 'circle', alt: 'imagem' %>
+        <%  unless product.photo.blank? %>
+          <%= image_tag product.photo.url, class: 'circle', alt: 'imagem' %>
+        <% end %>
         <span class="title"><%= product.name %></span>
         <p>
           <%= product.abstract %><br>
