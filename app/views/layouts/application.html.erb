@@ -52,32 +52,12 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <style >
-     input[id="search"] {
-       height: 45px !important;
-       margin-top: 0px;
-       border-radius: 5px;
-      }
-      .search-input{
-        background-color: #99d8f5d6 !important ;
-        height: 45px !important;
-        margin-top: 10px;
-        border-radius: 5px;
-       }
-       nav .input-field label {
-           top: -1.5em;
-           left: 0;
-       }
-
-
-     </style>
      <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113084880-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-113084880-1');
     </script>
 
@@ -87,7 +67,7 @@
    <body>
 
     <!-- Inínio cabeçalho -->
-    <nav class="light-blue lighten-1" role="navigation" style="min-height:400px;">
+    <nav class="light-blue lighten-1" role="navigation" style="min-height:270px;">
       <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo "></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="side-nav" id="mobile-demo">
@@ -132,43 +112,52 @@
       </div>
     </nav>
     <!-- Fim cabeçalho -->
+    <!-- banners inicio -->
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="https://lorempixel.com/580/250/nature/1"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://lorempixel.com/580/250/nature/2"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Left Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://lorempixel.com/580/250/nature/3"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Right Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://lorempixel.com/580/250/nature/4"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
 
-    <% unless devise_controller? %>
-      <!-- Inicio Banners -->
-      <div class="carousel carousel-slider center" data-indicators="true">
-        <div class="carousel-fixed-item center">
-          <a class="btn waves-effect white grey-text darken-text-2">button</a>
-        </div>
-        <div class="carousel-item red white-text" href="#one!">
-          <h2>First Panel</h2>
-          <p class="white-text">This is your first panel</p>
-        </div>false
-        <div class="carousel-item amber white-text" href="#two!">
-          <h2>Second Panel</h2>
-          <p class="white-text">This is your second panel</p>
-        </div>
-        <div class="carousel-item green white-text" href="#three!">
-          <h2>Third Panel</h2>
-          <p class="white-text">This is your third panel</p>
-        </div>
-        <div class="carousel-item blue white-text" href="#four!">
-          <h2>Fourth Panel</h2>
-          <p class="white-text">This is your fourth panel</p>
-        </div>
-      </div>
-      <script type="text/javascript">
-        $('.carousel.carousel-slider').carousel({fullWidth: true});
-      </script>
-      <!-- Fim Banners -->
-    <% end %>
-
-    <script type="text/javascript">
+    <script>
         $(document).ready(function(){
           $(".button-collapse").sideNav();
+          $('.slider').slider({
+            height: 300
+          });
         });
     </script>
-
+    <!-- banners fim -->
+    
     <%= yield %>
+
     <footer class="page-footer orange">
       <div class="container">
         <div class="row">

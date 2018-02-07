@@ -1,2 +1,18 @@
 @import "materialize";
 @import "material_icons";
+
+input[id="search"] {
+  height: 45px !important;
+  margin-top: 0px;
+  border-radius: 5px;
+ }
+ .search-input{
+   background-color: #99d8f5!important ;
+   height: 45px !important;
+   margin-top: 10px;
+   border-radius: 5px;
+  }
+  nav .input-field label {
+      top: -1.5em;
+      left: 0;
+  }

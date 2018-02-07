@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="section">
     <div class="row" >
@@ -7,7 +6,7 @@
           <div class="card hoverable" >
             <div itemprop="image" class="card-image">
             <% unless item.photo.blank? %>
-            <%= image_tag item.photo.poster.url, class: 'responsive-img' , alt: 'imagem', style: "max-height:230px;min-height:230px;" %>
+              <%= image_tag item.photo.poster.url, class: 'responsive-img' , alt: 'imagem', style: "max-height:230px;min-height:230px;" %>
             <% else %>
               <%= image_tag "sem-imagem.jpg", class: 'responsive-img' , alt: 'imagem', style: "max-height:230px;min-height:230px;" %>
             <% end %>
