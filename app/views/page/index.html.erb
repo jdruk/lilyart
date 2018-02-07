@@ -1,22 +1,22 @@
 
 <div class="container">
   <div class="section">
-    <div class="row">
+    <div class="row" >
       <% @items.each do |item| %>
-        <div  itemscope itemtype="http://schema.org/Product" class="col s3">
-          <div class="card hoverable">
+        <div  itemscope itemtype="http://schema.org/Product" class="col s12 m3 l3">
+          <div class="card hoverable" >
             <div itemprop="image" class="card-image">
             <% unless item.photo.blank? %>
-              <%= image_tag item.photo.url, class: 'responsive-img' , alt: 'imagem' %>
+            <%= image_tag item.photo.poster.url, class: 'responsive-img' , alt: 'imagem', style: "max-height:230px;min-height:230px;" %>
             <% else %>
-              <%= image_tag "sem-imagem.jpg", class: 'responsive-img' , alt: 'imagem' %>
+              <%= image_tag "sem-imagem.jpg", class: 'responsive-img' , alt: 'imagem', style: "max-height:230px;min-height:230px;" %>
             <% end %>
               <span class="card-title" itemprop="name" style="text-transform:uppercase;"><%= item.name %> </span>
               <a class="btn-floating halfway-fab waves-effect waves-light red pulse"><i class="material-icons">add</i></a>
             </div>
-            <div class="card-content">
+            <!-- <div class="card-content">
               <p  itemprop="description"><%= item.abstract %></p>
-            </div>
+            </div> -->
             <div class="card-action">
               <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                 <span itemprop="priceCurrency" content="BRL"></span>
