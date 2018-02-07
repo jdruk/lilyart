@@ -6,7 +6,11 @@
         <div  itemscope itemtype="http://schema.org/Product" class="col s3">
           <div class="card hoverable">
             <div itemprop="image" class="card-image">
-              <%= image_tag item.photo.poster.url, class: 'responsive-img' %>
+            <% unless item.photo.blank? %>
+              <%= image_tag item.photo.url, class: 'responsive-img' , alt: 'imagem' %>
+            <% else %>
+              <%= image_tag "sem-imagem.jpg", class: 'responsive-img' , alt: 'imagem' %>
+            <% end %>
               <span class="card-title" itemprop="name" style="text-transform:uppercase;"><%= item.name %> </span>
               <a class="btn-floating halfway-fab waves-effect waves-light red pulse"><i class="material-icons">add</i></a>
             </div>

@@ -25,8 +25,7 @@
 
       <div class="input-field col s6">
         <%= form.label :price %>
-        <!-- f.number_field :amount, value: number_to_currency(f.object.amount.to_f, delimiter: '', unit: ''), step: :any -->
-        <%= form.number_field :price,value: number_to_currency(form.object.price.to_f) , id: :item_price %>
+        <%= form.number_field :price, id: :item_price %>
       </div>
 
       <div class="input-field col s3">

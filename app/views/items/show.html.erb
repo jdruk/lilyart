@@ -50,7 +50,11 @@
 
   <p>
     <strong>Foto principal:</strong>
-    <%= image_tag(@item.photo.url, class: 'materialboxed', width:"250px") %>
+    <% unless @item.photo.blank? %>
+      <%= image_tag @item.photo.url, class: 'materialboxed', width:"250px", alt: 'imagem' %>
+    <% else %>
+      <%= image_tag "sem-imagem.jpg", class: 'materialboxed', width:"250px", alt: 'imagem' %>
+    <% end %>
   </p>
 
     <div class="divider"></div>

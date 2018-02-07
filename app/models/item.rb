@@ -25,7 +25,7 @@ class Item < ApplicationRecord
   end
 
   # Validações
-  validates :name, :weight, :widht, :height, :length, :status, presence: true
+  validates :name, :weight, :widht, :height, :length, :status, :price, presence: true
   validates :weight, numericality: { only_integer: true }
   validates :widht, numericality: { only_integer: true }
   validates :height, numericality: { only_integer: true }
