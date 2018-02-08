@@ -112,6 +112,8 @@ GEM
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
     formatador (0.2.5)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     google-api-client (0.8.6)
@@ -332,6 +334,7 @@ DEPENDENCIES
   devise!
   erubis
   fog-google
+  friendly_id (~> 5.1.0)
   google-api-client (> 0.8.5, < 0.9)
   jbuilder (~> 2.5)
   jquery-rails

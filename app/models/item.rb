@@ -1,4 +1,7 @@
 class Item < ApplicationRecord
+  # Add para urls amigáveis
+  extend FriendlyId
+  friendly_id :name, :use => [:slugged, :finders]
 
   # Adicionando método do carriewave para upload de imagens
   mount_uploader :photo, PhotoUploader
@@ -23,6 +26,7 @@ class Item < ApplicationRecord
   def price_without_promotion
     self.price * 1.25
   end
+
 
   # Validações
   validates :name, :weight, :widht, :height, :length, :status, :price, presence: true
