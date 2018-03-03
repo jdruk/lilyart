@@ -5,6 +5,6 @@ class PageController < ApplicationController
   end
 
   def show
-    @product = Item.friendly.find(params[:name])
+    @item = Item.friendly.find(params[:name])
   end
 end

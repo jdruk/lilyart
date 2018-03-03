@@ -1,0 +1,122 @@
+<div class="container">
+    <div class="row">
+        <div class="container">
+            <div class="row detail-hero">
+                <div class="col offset-m1 m6 s12">
+                    <% unless @item.photo.blank? %>
+                    <%= image_tag @item.photo.poster.url, class: 'materialboxed responsive-img' , alt: 'imagem', style: 'width="100%"' %>
+                    <% else %>
+                    <%= image_tag "sem-imagem.jpg", class: 'materialboxed responsive-img' , alt: 'imagem', style: 'width="100%"'%>
+                    <% end %>
+                </div>
+                <div class="col m5 s12">
+                    <h1><%= link_to @item.name, show_product_path(@item.slug) %></h1>
+                    <span class="manufacturer">produzido <a href="https://www.facebook.com/lili.fortaleza/">Liliart</a></span>
+                    <span class="detail-reviews">
+
+                            <span class="rating" title="5.0 Sterne von 5">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                            <% @item.sub_categories.each do |sub_category| %>
+                                <%= link_to sub_category.name, '#' %> |
+                            <% end %>
+                            <br>
+                            <strong>Tags:</strong>
+                            <% @item.tags.each do |tag| %>
+                              <div class="chip">
+                                <%= image_tag tag.photo.thumb.url if tag.photo? %>
+                                <%= tag.name %>
+                              </div>
+                            <% end %>
+                    </span>
+                    <p class="product-heading">Resumo.</p>
+                    <div class="product-summary"><p>
+                        <%= @item.abstract %>
+                        &nbsp;</p>
+                    </div>
+                    <table class="saugroboter-details" title="iRobot Roomba 651 bei Amazon.de kaufen">
+                        <tbody>
+                            <tr>
+                                <th>Preço recomendado de varejo.:</th>
+                                <td class="price-uvp"><strong><strike><%= @item.price_without_promotion %></strike></strong></td>
+                            </tr>
+                            <tr class="main-price">
+                                <th>Preço:</th>
+                                <td><strong><a class="underline" rel="nofollow" href="/angebote/neu/B00NYX0LZY"><%= @item.price %></a></strong></td>
+                            </tr>
+                            <tr>
+                                <th>Tipo:</th>
+                                <td class="price-used"><strong><i class="used"><%= @item.type_product %></i></strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a class="a_link" rel="nofollow" href="/angebote/kaufen/B00NYX0LZY"><i class="fa fa-shopping-cart"></i>Comprar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="background-color: rgb(245, 245, 245) !important;" id="detail">
+    <div class="container">
+        <div class="row" style="margin-bottom:0; padding-bottom:10px;">
+            <div class="col offset-m1 m11 s12">
+                <h3>Detalhamento</h3>
+                <div class="product-supply">
+                    <div class="product-summary"><p>
+                        <%= @item.description %>
+                        &nbsp;</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col offset-m1 m11 s12">
+                <h2>Características</h2>
+            </div>
+            <div class="col offset-m1 m3 s12">
+                <table class="saugroboter-details reverse">
+                    <tbody>
+                        <tr>
+                            <td><i class="fa fa-check"></i></td>
+                            <th><%= @item.type_product %></th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col m8 s12">
+                <table class="saugroboter-details">
+                    <tbody>
+                        <tr>
+                            <th>Altura:</th>
+                            <td> <%= @item.height %> cm</td>
+                        </tr>
+                        <tr>
+                            <th>Largura:</th>
+                            <td> <%= @item.widht %> cm</td>
+                        </tr>
+                        <tr>
+                            <th>Espessura:</th>
+                            <td> <%= @item.length %> cm</td>
+                        </tr>
+                        <tr>
+                            <th>Peso:</th>
+                            <td> <%= @item.weight %> gramas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+</script>

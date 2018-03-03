@@ -27,6 +27,9 @@ class Item < ApplicationRecord
     self.price * 1.25
   end
 
+  def type_product
+    Item.types.key(type_item)
+  end
 
   # Validações
   validates :name, :weight, :widht, :height, :length, :status, :price, presence: true

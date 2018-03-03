@@ -21,6 +21,7 @@
                 <span itemprop="priceCurrency" content="BRL"></span>
                   <span
                       itemprop="price" content="<%= item.price %>"><%= item.price %>
+                      <%= link_to "detalhar", show_product_path(item.slug) %>
                   </span>
                 <span itemprop="availability" href="http://schema.org/InStock" />
               </div>
