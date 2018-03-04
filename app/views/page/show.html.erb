@@ -14,24 +14,24 @@
                     <span class="manufacturer">produzido <a href="https://www.facebook.com/lili.fortaleza/">Liliart</a></span>
                     <span class="detail-reviews">
 
-                            <span class="rating" title="5.0 Sterne von 5">
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </span>
-                            <% @item.sub_categories.each do |sub_category| %>
-                                <%= link_to sub_category.name, '#' %> |
-                            <% end %>
-                            <br>
-                            <strong>Tags:</strong>
-                            <% @item.tags.each do |tag| %>
-                              <div class="chip">
-                                <%= image_tag tag.photo.thumb.url if tag.photo? %>
-                                <%= tag.name %>
-                              </div>
-                            <% end %>
+                        <span class="rating" title="5.0 Sterne von 5">
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </span>
+
+                        <% @item.sub_categories.each do |sub_category| %>
+                            <%= link_to sub_category.name, '#' %> |
+                        <% end %><br>
+                        <strong>Tags:</strong>
+                        <% @item.tags.each do |tag| %>
+                          <div class="chip">
+                            <%= image_tag tag.photo.thumb.url if tag.photo? %>
+                            <%= tag.name %>
+                          </div>
+                        <% end %>
                     </span>
                     <p class="product-heading">Resumo.</p>
                     <div class="product-summary"><p>
